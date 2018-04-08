@@ -1,0 +1,38 @@
+{% macro displaySourceList(source_list) %}
+    {% for source in source_list %}
+
+            <li class="text-center">
+
+                <h4 class="source-names">
+                    <a href="/source/{{source.id}}">
+                        {{ source.name }}
+                    </a>
+                </h4>
+            </li>
+
+    {% endfor %}
+{% endmacro %}
+
+<!-- Display articles -->
+{% macro displayArticleList(article_list) %}
+    {% for article in article_list %}
+            <li class="text-center">
+                <h4>
+                    <small class="publish-date">{{article.publishedAt}}</small>
+                    <br>
+                    <a href="{{ article.urlToArticle }}" class="article-title">
+                        {{ article.title }}
+                    </a>
+                </h4>
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-responsive article-image">
+                <p>
+                    <span class="article-description">
+                        {{ article.description }}
+                    </span>
+                    <br>
+                    <a href="{{ article.urlToArticle }}" class="article-link"> Read more...</a>
+                </p>
+            </li>
+        </div>
+    {% endfor %}
+{% endmacro %}
