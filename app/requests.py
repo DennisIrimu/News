@@ -60,4 +60,18 @@ def get_articles():
 
     return articles_results
 
-    
+def process_articles(article_list):
+    '''
+    Function that processes article results
+    '''
+    article_results = []
+
+    for article_item in article_list:
+        source = article_item.get('source')
+        title = article_item.get('title')
+        urlToImage = article_item.get('urlToImage')
+        description = article_item.get('description')
+        urlToArticle = article_item.get('url')
+        publishedAt = article_item.get('publishedAt')
+
+        
